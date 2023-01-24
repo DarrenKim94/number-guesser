@@ -13,7 +13,7 @@ function checkNum() {
     if (userGuess == ranNum) {
         message.innerHTML = 'That is correct!'
     }
-    if (userGuess === NaN) {
+    if (isNaN(userGuess) || userGuess ==='' || userGuess === null) {
         message.innerHTML = 'Not a number'
     }
 }
