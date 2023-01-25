@@ -1,4 +1,4 @@
-let ranNum = Math.floor(Math.random() * 100);
+let ranNum = Math.floor(Math.random() * 10);
 let message = document.getElementById('messageText');
 let guessCounter = 3
     
@@ -21,4 +21,6 @@ function checkNum() {
     if (guessCounter === 0) {
         message.innerHTML = `You have no more guess left, loser. The number was ${ranNum}`
     }
+    return false;
 }
+
