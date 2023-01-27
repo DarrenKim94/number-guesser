@@ -1,4 +1,4 @@
-let ranNum = Math.floor(Math.random() * 10);
+let ranNum = Math.floor(Math.random() * 100 + 1);
 const message = document.getElementById('messageText');
 let guessCounter = 3
 
@@ -20,12 +20,15 @@ function checkNum() {
     if (guessCounter === 0 && userGuess != ranNum) {
         message.innerHTML = `You have no more guesses left, loser. The number was ${ranNum}`;
     }
-    // if (guessCounter < 0) {
-    //     // resetGame();
-    // }
+    if (guessCounter < 0) {
+        resetGame();
+    }
     return false;
 }
 
-// function resetGame() {
-//     checkNum();
-// }
+function resetGame() {
+    guessCounter = 3;
+    ranNum = Math.floor(Math.random() * 10);
+    document.getElementById('messageText').innerHTML = 'Choose Again';
+    document.getElementById('numGuess').value = '';
+}
