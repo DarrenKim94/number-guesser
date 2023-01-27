@@ -14,7 +14,7 @@
         <p class="fs-2" id="messageText">Choose Wisely</p>
         <form id="form" onsubmit="return checkNum();">
             <label for="numGuess" class="fs-3">Type Your Number:</label>
-            <input type="text" id="numGuess">
+            <input type="number" min="1" max="10" id="numGuess">
             <input type="submit"  id="submitGuess">
             <button id="resetButton" onclick="resetGame()">Play Again</button>
           </form> 
