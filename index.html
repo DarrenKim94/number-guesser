@@ -13,10 +13,10 @@
         <p class="fs-2">You have three tries to guess a number from 1-100</p>    
         <p class="fs-2" id="messageText">Choose Wisely</p>
         <form id="form" onsubmit="return checkNum();">
-            <label for="numGuess" class="fs-3">Type Your Number:</label>
-            <input type="number" min="1" max="10" id="numGuess">
+            <label for="numGuess" class="fs-3">Choose Your Number:</label>
+            <input type="number"  min="1" max="10" id="numGuess">
             <input type="submit"  id="submitGuess">
-            <button id="resetButton" onclick="resetGame()">Play Again</button>
+            <button id="resetButton" value="Reset" onclick="resetGame()">Play Again</button>
           </form> 
         
     </div>

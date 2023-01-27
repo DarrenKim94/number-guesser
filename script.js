@@ -1,9 +1,9 @@
-const ranNum = Math.floor(Math.random() * 10);
-const message = document.getElementById('messageText');
+const ranNum = Math.floor(Math.random() * 100);
 let guessCounter = 3
-    
+
 function checkNum() {
     guessCounter --;
+    const message = document.getElementById('messageText');
     const userGuess = parseInt(document.getElementById('numGuess').value);
     if (isNaN(userGuess) || userGuess ==='' || userGuess === null) {
         message.innerHTML = 'Not a number'
@@ -27,9 +27,6 @@ function checkNum() {
 }
 
 function resetGame() {
-    ranNum = Math.floor(Math.random() * 10);
-    guessCounter = 3;
-    document.getElementById('numGuess').value = '';    
-    document.getElementById('messageText').innerHTML = 'Choose Wisely';
+    checkNum();
 }
 
