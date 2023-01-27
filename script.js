@@ -1,4 +1,4 @@
-let ranNum = Math.floor(Math.random() * 100 + 1);
+let ranNum = Math.floor(Math.random() * 10);
 const message = document.getElementById('messageText');
 let guessCounter = 3
 
