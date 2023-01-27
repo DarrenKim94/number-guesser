@@ -1,10 +1,10 @@
-const ranNum = Math.floor(Math.random() * 100);
+let ranNum = Math.floor(Math.random() * 10);
+const message = document.getElementById('messageText');
 let guessCounter = 3
 
 function checkNum() {
+    let userGuess = parseInt(document.getElementById('numGuess').value);
     guessCounter --;
-    const message = document.getElementById('messageText');
-    const userGuess = parseInt(document.getElementById('numGuess').value);
     if (isNaN(userGuess) || userGuess ==='' || userGuess === null) {
         message.innerHTML = 'Not a number'
     }
@@ -17,16 +17,15 @@ function checkNum() {
     if (userGuess === ranNum && guessCounter <= 3) {
         message.innerHTML = 'That is correct!'
     }
-    if (guessCounter === 0) {
+    if (guessCounter === 0 && userGuess != ranNum) {
         message.innerHTML = `You have no more guesses left, loser. The number was ${ranNum}`;
     }
-    if (guessCounter < 0) {
-        resetGame();
-    }
+    // if (guessCounter < 0) {
+    //     // resetGame();
+    // }
     return false;
 }
 
-function resetGame() {
-    checkNum();
-}
-
+// function resetGame() {
+//     checkNum();
+// }
