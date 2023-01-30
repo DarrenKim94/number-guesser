@@ -6,7 +6,8 @@ function checkNum() {
     let userGuess = parseInt(document.getElementById('numGuess').value);
     guessCounter --;
     if (isNaN(userGuess) || userGuess ==='' || userGuess === null) {
-        message.innerHTML = 'Not a number'
+        message.innerHTML = 'Not a number';
+        return false;
     }
     if (userGuess > ranNum) {
         message.innerHTML = `Your number is too high. You have ${guessCounter} guesses left.`;
@@ -28,7 +29,7 @@ function checkNum() {
 
 function resetGame() {
     guessCounter = 3;
-    ranNum = Math.floor(Math.random() * 10);
+    ranNum = Math.floor(Math.random() * 100 + 1);
     document.getElementById('messageText').innerHTML = 'Choose Again';
     document.getElementById('numGuess').value = '';
 }
